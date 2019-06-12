@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录注册界面</title>
+    <style type="text/css">
+        .outbox {
+            margin: auto;
+            border: 1.5px solid deepskyblue;
+            width: 550px;
+            height: 580px;
+            padding: 0 25px;
+        }
+
+        .login fieldset div {
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 60px;
+
+        }
+
+        .login fieldset div label {
+            margin-left: 20px;
+        }
+
+        .reg fieldset div {
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 60px;
+        }
+
+        .reg fieldset div label {
+            margin-left: 20px;
+        }
+
+        fieldset, legend {
+            border: 1.5px solid deepskyblue;
+        }
+
+    </style>
+</head>
+<body>
+{{data}}
+<div class="outbox">
+    <form enctype="multipart/form-data" method="post" action="/login">
+        <h3>已注册用户请登录</h3>
+        <div class="login">
+            <fieldset>
+                <legend style="color: deepskyblue;font-weight: bold">用户登录</legend>
+                <div>
+                    <label for="username" style="margin-left: 40px">用户名：</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div>
+                    <label for="pwd" style="margin-left: 55px">密码：</label>
+                    <input type="password" name="pwd" id="pwd">
+                </div>
+                <div>
+                    <input type="checkbox" value="0" name="rember" style="margin-left: 40px"><span
+                        style="color: deepskyblue">记住我</span>
+                    <input type="submit" value="登录"
+                           style="background-color: cornflowerblue;border: 2px solid lightskyblue">
+                </div>
+                <span style="color: deepskyblue">你忘记密码？</span>
+            </fieldset>
+        </div>
+        <h3>注册创建账户</h3>
+        <div class="reg">
+            <fieldset>
+                <legend style="color: deepskyblue;font-weight:bold">用户注册</legend>
+                <span style="color: deepskyblue;font-weight: bold">请填写正确的电子邮箱</span>
+                <span style="color: deepskyblue">在你注册之前请先阅读服务条款</span>
+                <div>
+                    <label for="regusername" style="margin-left: 40px">用户名：</label>
+                    <input type="text" name="regusername" id="regusername">
+                    <span>*（请输入6-16个字节）</span>
+                </div>
+                <div>
+                    <label for="email" style="margin-left: 23px">电子邮箱：</label>
+                    <input type="email" name="email" id="email">
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="regpwd" style="margin-left: 55px">密码：</label>
+                    <input type="password" name="regpwd" id="regpwd" maxlength="16">
+                    <span>*（最多16个字符）</span>
+                </div>
+                <div>
+                    <label for="repwd" style="margin-left: 23px">重复密码：</label>
+                    <input type="password" name="repwd" id="repwd" maxlength="16">
+                </div>
+                <div>
+                    <span>同意服务条款</span>
+                    <input type="checkbox" name="ok" value="1">
+                    <span style="color: deepskyblue">先看看条款</span>
+                </div>
+                <div style="margin-left: 0px">
+                    <input type="submit" value="提交"
+                           style="background-color: cornflowerblue;border: 2px solid lightskyblue">
+                    <input type="reset" value="重置"
+                           style="background-color: cornflowerblue;border: 2px solid lightskyblue">
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+</body>
+</html>
