@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轻阅登录</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .div_out {
+            height: 100%;
+            background-color: lightpink;
+            text-align: center;
+        }
+
+        .div_one {
+            padding-top: 8%;
+            color: white;
+        }
+
+        .div_two {
+            display: inline-block;
+            background-color: rgba(187, 247, 167, 0.7);
+            border-radius: 5px;
+        }
+
+        input {
+            display: block;
+            width: 240px;
+            height: 35px;
+            margin: 10px 10px;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-color: #e7e8e8;
+        }
+
+        hr {
+            border-color: black;
+        }
+        #btn1{
+            color: white;
+            background-color: #b4fff5;
+        }
+    </style>
+</head>
+<body>
+<form enctype="application/x-www-form-urlencoded" method="post" action="/polls/login/">
+<div class="div_out">
+    <div class="div_one">
+        <h2>轻阅1.0后台管理系统</h2>
+        <h4>QingRead Management System 1.0</h4>
+    </div>
+    <div class="div_two">
+        <h3>管理员登录</h3>
+        <hr>
+        <div>
+            <input type="text" name="username" id="username" maxlength="16">
+            <input type="password" name="pwd" id="pwd" maxlength="20">
+            <img src="/polls/get_cache_code/" id="cache_code" style="width: 100px;height: 50px" name="cache_code">
+            <input type="text" name="cache_code">
+            <input type="submit" id="btn1" value="登录">
+        </div>
+    </div>
+</div>
+</form>
+<script>
+    var cache=window.document.getElementById('cache_code');
+    cache.onclick=function () {
+        this.src = "/polls/get_cache_code/?rnd=" + Math.random();
+    }
+</script>
+</body>
+</html>

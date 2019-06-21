@@ -1,0 +1,270 @@
+<style>
+    .xiaoque1 > div {
+        text-align: left;
+    }
+
+    .top {
+        text-align: left;
+        background-color: greenyellow;
+    }
+
+    .xiaoque1 input {
+        width: 100px;
+    }
+
+    .t2, .t3, .t4 {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .t2 span, .t3 span {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 80px;
+    }
+
+    .t2 input, .t3 input {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 120px;
+    }
+
+    .t2 select {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 120px;
+    }
+
+    #b1 {
+        background-color: #ea7a1a;
+        color: white;
+        width: 60px;
+    }
+
+    #b2 {
+        background-color: green;
+        color: white;
+        margin-left: 145px;
+    }
+
+    .table1 {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .table1 table {
+        border: 1px solid;
+    }
+
+    .table1 table tr td, .table1 table tr th {
+        border: 1px solid;
+    }
+
+    .bao1 {
+        background-color: antiquewhite;
+        padding: 20px;
+        position: fixed;
+        left: 250px;
+        top: 100px;
+    }
+
+    .bao1 {
+        display: none;
+    }
+
+    form div {
+        margin-top: 10px;
+    }
+
+    form div input {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 250px;
+        height: 40px;
+    }
+
+    form div span:first-child {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 80px;
+    }
+
+    .s01 {
+        width: 20px;
+        height: 20px;
+    }
+
+    #g {
+        text-align: right;
+        text-decoration: none;
+        color: red;
+    }
+</style>
+{% extends 'common/home.html' %}
+{% block context %}
+    <script>
+        $(document).ready(function () {
+            $('#a1').click(function () {
+                $('.shou').hide();
+                $('.xiaoque1').show();
+            });
+            $('#b2').click(function () {
+                $('.bao1').show();
+            });
+            $('#g').click(function () {
+                $('.bao1').hide();
+            });
+            $('#tj').click(function () {
+                $('.bao1').hide();
+            });
+        })
+    </script>
+    <div class="xiaoque1">
+        <div class="top">
+            <span>位置:</span>
+            <span>消缺任务管理>消缺任务制定与分配</span>
+        </div>
+        <div class="t2">
+            <span>任务编号：</span>
+            <input type="text" name="i1" id="i1">
+            <span>任务状态：</span>
+            <select class="s1">
+                <option>...请选择...</option>
+                <option>已完成</option>
+                <option>未完成</option>
+                <option>执行中</option>
+            </select>
+        </div>
+        <div class="t3">
+            <span>下发人：</span>
+            <input type="text" name="i2" id="i2">
+            <span>下发时间：</span>
+            <input type="date" name="i3" id="i3"> -
+            <input type="date" name="i4" id="i4">
+        </div>
+        <div class="t4">
+            <input type="button" id="b1" value="查询">
+            <input type="button" id="b2" value="制定消缺任务">
+        </div>
+        <div class="table1">
+            <table cellspacing="0" cellpadding="5px">
+                <tr>
+                    <th>任务编号</th>
+                    <th>任务名称</th>
+                    <th>工作单据</th>
+                    <th>下发人</th>
+                    <th>下发时间</th>
+                    <th>任务状态</th>
+                    <th>任务完成时间</th>
+                    <th>任务是否取消</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>{{ check.mis_task.task_id }}</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr align="right">
+                    <th colspan="10">共2条记录 当前：1/1页 首页上一页 下一页 尾页调到:<input type="text">页<input type="button" value="确定">
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="bao1">
+        <form enctype="application/x-www-form-urlencoded" method="post" action="/mis_task/ti_mis_task/">
+            <div>
+                <a href="#" id="g">关闭</a>
+            </div>
+            <div>
+                <span>任务编号</span>
+                <input type="text" name="task_id">
+            </div>
+            <div>
+                <span>任务名称</span>
+                <input type="text" name="task_name">
+            </div>
+            <div>
+                <span>巡检线路</span>
+                <select name="patrol_circuit">
+                    <option>西南一线</option>
+                    <option>西南二线</option>
+                    <option>西南三线</option>
+                    <option>西南四线</option>
+                </select>
+            </div>
+            <div>
+                <span>巡检员</span>
+                <input type="checkbox" name="Inspector" class="s01" value="x1"><span>巡检人员1</span>
+                <input type="checkbox" name="Inspector" class="s01" value="x2"><span>巡检人员2</span>
+                <input type="checkbox" name="Inspector" class="s01" value="x3"><span>巡检人员3</span>
+                <input type="checkbox" name="Inspector" class="s01" value="x4"><span>巡检人员4</span>
+            </div>
+            <div>
+                <span>启用状态</span>
+                <input type="radio" name="enabled_state" value="a1" class="s01"><span>启用</span>
+                <input type="radio" name="enabled_state" value="a2" class="s01"><span>禁用</span>
+            </div>
+            <div>
+                <span>起始杆号</span>
+                <input type="text" name="Initial_pole_number">
+            </div>
+            <div>
+                <span>终止杆号</span>
+                <input type="text" name="termination_pole_number">
+            </div>
+            <div>
+                <span>下发人</span>
+                <input class="sender" name="sender">
+            </div>
+            <div>
+                <span>下发时间</span>
+                <span class="departure_time">自动获取</span>
+            </div>
+            <div>
+                <span>备注</span>
+                <textarea rows="5" cols="32" name="remarks"></textarea>
+            </div>
+            <input type="submit" id="tj" value="提交">
+        </form>
+    </div>
+{% endblock %}

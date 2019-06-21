@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block 后台管理系统 %}{% endblock %}</title>
+    <style type="text/css">
+        .top_div {
+            position: fixed;
+            height: 60px;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-image: url("/static/img/top-background.jpg");
+        }
+
+        .left_div {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            bottom: 0;
+            background: darkcyan;
+        }
+
+        .right_div {
+            position: fixed;
+            top: 60px;
+            left: 200px;
+            right: 0;
+            bottom: 0;
+            background: silver;
+        }
+
+        .top_div > h3 {
+            padding: 0;
+            margin: 10px 30px;
+            color: red;
+            font-size: 25px;
+        }
+
+        .left ul {
+            text-align: left;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .left_div a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .left_div li {
+            list-style-type: none;
+        }
+
+        .left_div > ul > li > a {
+            font-size: 20px;
+        }
+
+        .left_div > ul > li > ul > li > a {
+            margin: 10px 0 10px -30px;
+        }
+
+        .left_div > ul > li > ul {
+            display: none;
+        }
+    </style>
+    <script src="/static/js/jquery-2.2.4.min.js" rel="stylesheet"></script>
+</head>
+<body>
+<div class="top_div">
+    <h3>电 力 巡 检 系 统</h3>
+</div>
+<div class="left_div">
+    <ul class="u1">
+        <li><a href="#">我的工作平台</a>
+            <ul>
+                <li><a href="#">待办列表</a></li>
+                <li><a href="#">个人资料修改</a></li>
+            </ul>
+        </li>
+        <li><a href="#">系统管理</a>
+            <ul>
+                <li><a href="#">角色管理</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">菜单管理</a></li>
+                <li><a href="#">角色权限配置</a></li>
+                <li><a href="#">系统配置</a></li>
+            </ul>
+        </li>
+        <li><a href="#">塔杆管理</a>
+            <ul>
+                <li><a href="#">塔杆管理</a></li>
+            </ul>
+        </li>
+        <li><a href="#">线路管理</a>
+            <ul>
+                <li><a href="#">线路管理</a></li>
+            </ul>
+        </li>
+        <li><a href="#">缺陷管理</a>
+            <ul>
+                <li><a href="#">缺陷类型设置</a></li>
+                <li><a href="#">缺陷等级确认</a></li>
+            </ul>
+        </li>
+        <li><a href="#">巡检任务管理</a>
+            <ul>
+                <li><a href="#">巡检任务制定与分配</a></li>
+                <li><a href="#">巡检任务执行与回执</a></li>
+                <li><a href="#">缺陷查询</a></li>
+            </ul>
+        </li>
+        <li><a href="#">消缺任务管理</a>
+            <ul>
+                <li><a href="/mis_task/get_xiaoque" id="a1">消缺任务制定与分配</a></li>
+                <li><a href="#">消缺任务执行与回执</a></li>
+                <li><a href="#">消缺查询</a></li>
+            </ul>
+        </li>
+        <li><a href="#">信息统计</a>
+            <ul>
+                <li><a href="#">巡检记录统计</a></li>
+                <li><a href="#">消缺记录统计</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="right_div">{% block context %}{% endblock %}</div>
+<script>
+    $(document).ready(function () {
+        $('.u1>li>a').click(function () {
+            $(this).siblings("ul").toggle().css("background-color", "sandybrown")
+        });
+    })
+</script>
+</body>
+</html>

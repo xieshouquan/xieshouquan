@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消缺管理系统登陆</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .div_log {
+            height: 100%;
+            background-color: #ea7a1a;
+            text-align: center;
+        }
+
+        .div_tu {
+            padding-top: 8%;
+        }
+
+        .div_ba {
+            display: inline-block;
+            height: 336px;
+            width: 692px;
+            background-image: url("/static/img/login-background.png");
+        }
+
+        .div_in form > input {
+            box-sizing: border-box;
+            display: block;
+            width: 270px;
+            height: 40px;
+            margin-top: 15px;
+        }
+
+        .div_in form {
+            text-align: left;
+            display: inline-block;
+            margin-left: 155px;
+            margin-top: 70px;
+        }
+
+        .div_in1 {
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .div_in1 > #but1 {
+            width: 80px;
+            height: 35px;
+            color: white;
+            background-color: firebrick;
+        }
+    </style>
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<div class="div_log">
+    <div class="div_tu">
+        <img src="/static/img/logo-title.png">
+    </div>
+    <div class="div_ba">
+        <div class="div_in">
+            <form enctype="application/x-www-form-urlencoded" method="post" action="/polls/Login/">
+                <input type="text" id="username" name="username" placeholder="用户名">
+                <input type="password" id="pwd" name="password" placeholder="密码">
+                <div class="div_in1">
+                    <input type="submit" id="but1" value="登陆">
+                    <input type="checkbox" id="ch" checked>
+                    <span id="sp1">记住密码</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

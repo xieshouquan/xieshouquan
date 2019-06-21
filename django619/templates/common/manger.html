@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主界面</title>
+    <script rel="stylesheet" src="/static/js/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title1 {
+            position: relative;
+            display: inline-flex;
+            background-image: url("/static/img/top-background.jpg");
+            height: 88px;
+            width: 100%;
+            background-size: 100% 88px;
+            background-repeat: no-repeat;
+        }
+
+        .title1 > h3 {
+            margin-left: 35px;
+            color: white;
+            font-size: 25px;
+        }
+
+        .left ul {
+            text-align: left;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ul1 > li > ul {
+            display: none;
+        }
+
+        .left {
+            border-right: 1px solid #ea7a1a;
+            height: 100%;
+            position: fixed;
+            box-sizing: border-box;
+            margin: 0;
+            width: 300px;
+            background-color: darkcyan;
+        }
+
+        .left li {
+            display: block;
+        }
+
+        .shou, .ye1 {
+            text-align: center;
+            top: 88px;
+            left: 300px;
+            right: 0;
+            bottom: 0;
+            position: fixed;
+            height: 100%;
+            background-color: aqua;
+        }
+
+        .left a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px 0 10px 20px;
+        }
+
+        .ul1 > li > a {
+            font-weight: bold;
+            font-size: 17px;
+            border-bottom: 1px solid #ea7a1a;
+        }
+
+        .ul1 > li > ul a {
+            margin-left: 20px;
+        }
+
+        h1 {
+            margin-top: 160px;
+        }
+
+        .ye1 {
+            display: none;
+        }
+
+        .t1 {
+            text-align: left;
+            background-color: darkcyan;
+        }
+
+        .ye1 > div {
+            text-align: left;
+        }
+
+        .t2, .t3, .t4 {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .ye1 input {
+            width: 100px;
+        }
+
+        .t2 span, .t3 span {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .t2 input, .t3 input {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .t2 select {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 120px;
+        }
+
+        #b1 {
+            background-color: #ea7a1a;
+            color: white;
+            width: 60px;
+        }
+
+        #b2 {
+            background-color: green;
+            color: white;
+            margin-left: 145px;
+        }
+
+        table, td {
+            text-align: center;
+            border: 1px solid #ea7a1a;
+        }
+
+        td {
+            padding: 0 50px;
+        }
+
+        .t5 {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .bao1 {
+            background-color: antiquewhite;
+            padding: 20px;
+            position: fixed;
+            left: 600px;
+            top: 200px;
+        }
+
+        .bao1 {
+            display: none;
+        }
+
+        form div {
+            margin-top: 10px;
+        }
+
+        form div input {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 250px;
+            height: 40px;
+        }
+
+        form div span:first-child {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .s01 {
+            width: 20px;
+            height: 20px;
+        }
+
+        #g {
+            text-align: right;
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="title1">
+        <h3>电 力 巡 检 系 统</h3>
+    </div>
+    <div class="left">
+        <ul class="ul1">
+            <li><a href="#">我的工作平台</a>
+                <ul>
+                    <li><a href="#">待办列表</a></li>
+                    <li><a href="#">个人资料修改</a></li>
+                </ul>
+            </li>
+            <li><a href="#">系统管理</a>
+                <ul>
+                    <li><a href="#">角色管理</a></li>
+                    <li><a href="#">用户管理</a></li>
+                    <li><a href="#">菜单管理</a></li>
+                    <li><a href="#">角色权限配置</a></li>
+                    <li><a href="#">系统配置</a></li>
+                </ul>
+            </li>
+            <li><a href="#">塔杆管理</a>
+                <ul>
+                    <li><a href="#">塔杆管理</a></li>
+                </ul>
+            </li>
+            <li><a href="#">线路管理</a>
+                <ul>
+                    <li><a href="#">线路管理</a></li>
+                </ul>
+            </li>
+            <li><a href="#">缺陷管理</a>
+                <ul>
+                    <li><a href="#">缺陷类型设置</a></li>
+                    <li><a href="#">缺陷等级确认</a></li>
+                </ul>
+            </li>
+            <li><a href="#">巡检任务管理</a>
+                <ul>
+                    <li><a href="#">巡检任务制定与分配</a></li>
+                    <li><a href="#">巡检任务执行与回执</a></li>
+                    <li><a href="#">缺陷查询</a></li>
+                </ul>
+            </li>
+            <li><a href="#">消缺任务管理</a>
+                <ul>
+                    <li><a href="#" id="a1">消缺任务制定与分配</a></li>
+                    <li><a href="#">消缺任务执行与回执</a></li>
+                    <li><a href="#">消缺查询</a></li>
+                </ul>
+            </li>
+            <li><a href="#">信息统计</a>
+                <ul>
+                    <li><a href="#">巡检记录统计</a></li>
+                    <li><a href="#">消缺记录统计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="shou">
+        <h1>欢迎登陆电力巡检系统！</h1>
+    </div>
+    <div class="ye1">
+        <div class="t1">
+            <span>位置:</span>
+            <span>消缺任务管理>消缺任务制定与分配</span>
+        </div>
+        <div class="t2">
+            <span>任务编号：</span>
+            <input type="text" name="i1" id="i1">
+            <span>任务状态：</span>
+            <select class="s1">
+                <option>...请选择...</option>
+                <option>已完成</option>
+                <option>未完成</option>
+                <option>执行中</option>
+            </select>
+        </div>
+        <div class="t3">
+            <span>下发人：</span>
+            <input type="text" name="i2" id="i2">
+            <span>下发时间：</span>
+            <input type="date" name="i3" id="i3"> -
+            <input type="date" name="i4" id="i4">
+        </div>
+        <div class="t4">
+            <input type="button" id="b1" value="查询">
+            <input type="button" id="b2" value="制定消缺任务">
+        </div>
+        <div class="t5">
+            <table>
+                <tr>
+                    <th>任务编号</th>
+                    <th>任务名称</th>
+                    <th>工作单据</th>
+                    <th>下发人</th>
+                    <th>下发时间</th>
+                    <th>任务状态</th>
+                    <th>任务完成时间</th>
+                    <th>任务是否取消</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <td>RW0245</td>
+                    <td>西线一线任务巡检</td>
+                    <td>任务单</td>
+                    <td>管理员</td>
+                    <td>2013-11-21</td>
+                    <td>待分配</td>
+                    <td></td>
+                    <td>否</td>
+                    <td><span>查看</span>|<span>分配任务</span>|<span>修改</span>|<span>取消</span></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>共2条记录</th>
+                    <th>当前：1/2页 首页</th>
+                    <th>上一页 下一页 尾页</th>
+                    <th>调到： 页</th>
+                    <th><input type="button" value="确定"></th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="bao1">
+        <form enctype="application/x-www-form-urlencoded" method="post" action="/polls/Ti/">
+            <div>
+                <a href="#" id="g">关闭</a>
+            </div>
+            <div>
+                <span>任务编号</span>
+                <input type="text" name="task_id">
+            </div>
+            <div>
+                <span>任务名称</span>
+                <input type="text" name="task_name">
+            </div>
+            <div>
+                <span>巡检线路</span>
+                <select name="patrol_circuit">
+                    <option>西南一线</option>
+                    <option>西南一线</option>
+                    <option>西南一线</option>
+                    <option>西南一线</option>
+                </select>
+            </div>
+            <div>
+                <span>巡检员</span>
+                <input type="checkbox" name="Inspector" class="s01"><span>巡检人员1</span>
+                <input type="checkbox" name="Inspector" class="s01"><span>巡检人员2</span>
+                <input type="checkbox" name="Inspector" class="s01"><span>巡检人员3</span>
+                <input type="checkbox" name="Inspector" class="s01"><span>巡检人员4</span>
+            </div>
+            <div>
+                <span>启用状态</span>
+                <input type="radio" name="enabled_state" class="s01"><span>启用</span>
+                <input type="radio" name="enabled_state" class="s01"><span>禁用</span>
+            </div>
+            <div>
+                <span>起始杆号</span>
+                <input type="text" name="Initial_pole_number">
+            </div>
+            <div>
+                <span>终止杆号</span>
+                <input type="text" name="termination_pole_number">
+            </div>
+            <div>
+                <span>下发人</span>
+                <span class="sender">admin</span>
+            </div>
+            <div>
+                <span>下发时间</span>
+                <span class="departure_time">2015-12-12</span>
+            </div>
+            <div>
+                <span>备注</span>
+                <textarea rows="5" cols="32" name="remarks"></textarea>
+            </div>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.ul1>li>a').click(function () {
+            $(this).siblings("ul").toggle().css("background-color", "sandybrown")
+        });
+        $('#a1').click(function () {
+            $('.shou').hide();
+            $('.ye1').show();
+        });
+        $('#b2').click(function () {
+            $('.bao1').show();
+        });
+        $('#g').click(function () {
+            $('.bao1').hide();
+        });
+    })
+</script>
+</body>
+</html>
