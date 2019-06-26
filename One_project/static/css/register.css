@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***********注册************/
+.password-con{ width:700px; margin:50px auto 0;}
+.password-con .psw{margin-bottom:10px;}
+.password-con .psw p{ display:inline-block; width:90px; margin-right:10px; font-size:15px; color:#2E2E2E; text-align:right;}
+.password-con .psw input{ width:319px; height:44px; padding:0 10px; border:1px solid #CBCBCB; font-size:13px; color:#8C8C8C;}
+.password-con .psw span{ margin-left:10px; padding-left:25px;}
+.password-con .psw .cuo{ background:url(/static/img/psw-cuo.gif) no-repeat left center;}
+.password-con .psw .dui{ background:url(/static/img/psw-dui.gif) no-repeat left center;}
+.password-con .psw-btn{ width:340px; height:44px; cursor:pointer; color:#fff; margin-left:103px; font-size:16px; background:#F09E0B; border:none;text-align: center}
+
+.password-con .psw3 input{ width:143px;}
+.password-con .yanzhentu .yz-tu{ width:163px; height:64px; border:1px solid #C0C0C0; margin-left:103px;}
+.password-con .yanzhentu p{ display:inline-block; line-height:66px; font-size:14px; color:#000; margin-left:10px;}
+.password-con .yanzhentu p a{color:#F19F0B;}
+.password-con .agreement{ margin:10px 0 10px 103px;}
+.password-con .agreement p{ display:inline-block; font-size:14px; color:#000; margin-left:5px;}
+.password-con .agreement p span{ color:#F19F0B;}
+.password-con .sign-in{ font-size:14px; color:#000; margin:10px 0 10px 103px;}
+.password-con .sign-in a{color:#F19F0B;}

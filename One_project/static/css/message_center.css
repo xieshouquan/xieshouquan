@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*********个人消息*********/
+.personal{ margin:20px auto 0;}
+.personal-left{ width:216px;border:1px solid #DEDEDE;}
+.personal-l-tit{ height:45px; background:#F5A81D;}
+.personal-l-tit h3{ font-weight:normal; font-size:16px; color:#fff; margin-left:15px; line-height:45px;}
+.personal-left ul{ padding:0 5px;}
+.personal-left li{ height:46px; line-height:46px; border-bottom:1px solid #DEDEDE;}
+.personal-left li a{ display:block; padding-left:50px; font-size:14px; color:#1E1E1E;}
+.personal-left .current-li a{color:#F5A91E;}
+.personal-left li:hover a{color:#F5A91E;}
+.personal-left li a span{ font-family:"宋体"; float:right; margin-right:15px;}
+.personal-left .per-li1{ background:url(../img/pers-l-tu1.gif) no-repeat 15px center;}
+.personal-left .per-li2{ background:url(../img/pers-l-tu2.gif) no-repeat 15px center;}
+.personal-left .per-li3{ background:url(../img/pers-l-tu3.gif) no-repeat 15px center;}
+.personal-left .per-li4{ background:url(../img/pers-l-tu4.gif) no-repeat 15px center;}
+.personal-left .per-li5{ background:url(../img/pers-l-tu5.gif) no-repeat 15px center;}
+.personal-left .per-li6{ background:url(../img/pers-l-tu6.gif) no-repeat 15px center;}
+.personal-left .per-li7{ background:url(../img/pers-l-tu7.gif) no-repeat 15px center;}
+.personal-left .per-li8{ background:url(../img/pers-l-tu8.gif) no-repeat 15px center;}
+.personal-left .per-li9{ background:url(../img/pers-l-tu9.gif) no-repeat 15px center;}
+.personal-left .per-li10{ background:url(../img/pers-l-tu10.gif) no-repeat 15px center; border-bottom:0;}
+
+.personal-r{ width:963px;}
+.personal-right{border:1px solid #DEDEDE; padding-bottom:15px;}
+.personal-r-tit{height:44px; border-bottom:1px solid #dedede; background:#F7F7F7; }
+.personal-r-tit h3{ line-height:44px; font-weight:normal; font-size:14px; color:#000; margin-left:15px;}
+.theme{ height:36px; border-top:1px solid #85A3C1; border-bottom:1px solid #85A3C1;}
+.theme .th-p1{ display:inline-block; width:81px; height:36px; line-height:36px; border-right:1px solid #85A3C1;}
+.theme .th-p1 input{ margin-left:25px;}
+.theme .th-p1 span{ font-size:14px; color:#646464; position:relative; top:-2px; left:3px;}
+.theme .th-p2{ width:39px; height:36px;border-right:1px solid #85A3C1;}
+.theme .th-p2 img{ margin:14px 0 0 12px;}
+.theme .th-p3{ width:704px; height:36px; line-height:36px; margin-left:10px; font-size:14px; color:#646464; border-right:1px solid #85A3C1;}
+.theme .th-p4{ font-size:14px; line-height:36px; color:#646464; margin-left:15px;}
+.per-info{ margin-top:20px;}
+.per-info .p-top{ font-size:14px; color:#6585A4; padding-left:10px; border-bottom:1px solid #85A3C1;}
+.per-info li{ height:46px; line-height:46px; border-bottom:1px solid #D9D9D9;}
+.per-info li input{ float:left; width:90px; height:46px; margin-left:-9px;}
+.per-info li p{font-size:14px; color:#2C2C2C;}
+.per-info li .p-tu{ width:40px;}
+.per-info li .p-tu img{margin:18px 0 0 12px;}
+.per-info li .p-font{ margin-left:10px; width:705px; height:46px; overflow:hidden;font-size: 14px;color: #2C2C2C;}
+.per-info li .p-font:hover{ color:#F09E0B;}
+.per-info li .p-font1{ color:#646464;}
+.per-del{ padding:5px 10px; border:1px solid #CFCFCF; background:#e8e8e8; border-radius:5px; font-size:13px; color:#2C2C2C; cursor:pointer; margin:15px 0 0 10px;}
