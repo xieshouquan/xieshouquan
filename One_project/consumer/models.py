@@ -27,10 +27,10 @@ class MyUserManager(BaseUserManager):
 
 class MyUser(AbstractBaseUser):
     headimage = models.FileField('头像', upload_to='tmp/',null=True)
-    usernickname=models.CharField('昵称',max_length=30,null=True)
+    usernickname=models.CharField('昵称',max_length=30,default='')
     username = models.CharField('用户名',max_length=30,unique=True)
-    usersex=models.BooleanField('性别',null=True)
-    userage=models.IntegerField('年龄',null=True)
+    usersex=models.BooleanField('性别',default=True)
+    userage=models.CharField('年龄',max_length=3,default='')
     userphone=models.CharField('手机号',max_length=13)
     userEmail = models.EmailField('邮箱')
 

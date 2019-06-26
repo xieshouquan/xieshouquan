@@ -20,12 +20,12 @@ def get_code(request):
     request.session['code'] = code
     return HttpResponse(img.getvalue(), content_type='image/png')
 
-def get_codes(request):
-    img, code = get_cache_code_info()
-    request.session['code'] = code
-    return HttpResponse(img.getvalue(), content_type='image/png')
+#个人资料
+def personal_center(request):
+    user = MyUser.objects.get(id=18)
+    return render(request,'consumer/personal_center.html',{"userinfo":user})
 
-
+#登录加载
 def login(request):
     return render(request, 'consumer/login.html')
 
@@ -69,4 +69,3 @@ def Login(request):
     else:
         form_error = forms.errors.as_json()
         return JsonResponse({'msg':'格式不正确','data':form_error,'status':'form_error'})
-

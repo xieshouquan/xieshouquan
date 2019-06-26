@@ -13,7 +13,7 @@
     	<div class="top-con w1200">
         	<p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
             <ul class="t-con-r f-r">
-            	<li><a href="#">我 (个人中心)</a></li>
+            	<li><a href="{% url 'consumer:message_center' %}">我 (个人中心)</a></li>
             	<li><a href="#">我的购物车</a></li>
             	<li><a href="#">我的订单</a></li>
             	<li class="erweima">
@@ -551,8 +551,8 @@
             	<h3>个人中心</h3>
             </div>
             <ul>
-            	<li class="current-li per-li1"><a href="#">消息中心<span>></span></a></li>
-            	<li class="per-li2"><a href="#">个人资料<span>></span></a></li>
+            	<li class="current-li per-li1"><a href="{% url 'consumer:message_center' %}">消息中心<span>></span></a></li>
+            	<li class="per-li2"><a href="{% url 'consumer:personal_center' %}">个人资料<span>></span></a></li>
             	<li class="per-li3"><a href="#">我的订单<span>></span></a></li>
             	<li class="per-li4"><a href="#">我的预约<span>></span></a></li>
             	<li class="per-li5"><a href="#">购物车<span>></span></a></li>
