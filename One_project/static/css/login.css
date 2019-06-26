@@ -5,7 +5,7 @@
 .sign-logo{ width:1172px;padding:32px 0 38px 28px;}
 .sign-con{ height:390px;}
 .sign-con .sign-contu{ margin:37px 149px 48px 116px;}
-.sign-con .sign-ipt{width:325px;height:390px;border:1px solid #CBCBCB;margin-top:0;padding:40px 0 0 45px;}
+.sign-con .sign-ipt{width:325px;height:300px;border:1px solid #CBCBCB;margin-top:12px;padding:40px 0 0 45px;}
 .sign-con .sign-ipt p{ width:280px; font-size:15px; color:#272727; margin:8px 0 5px;}
 .sign-con .sign-ipt p a{ color:#F19F0B;}
 .sign-con .sign-ipt p a:hover{text-decoration:underline;}

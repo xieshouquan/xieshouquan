@@ -20,14 +20,14 @@ def get_code(request):
     request.session['code'] = code
     return HttpResponse(img.getvalue(), content_type='image/png')
 
+def get_codes(request):
+    img, code = get_cache_code_info()
+    request.session['code'] = code
+    return HttpResponse(img.getvalue(), content_type='image/png')
 
-class Login(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'consumer/login.html')
 
-    def post(self, request, *args, **kwargs):
-        pass
-
+def login(request):
+    return render(request, 'consumer/login.html')
 
 class Register(View):
     def get(self, request, *args, **kwargs):
@@ -48,7 +48,7 @@ class Register(View):
                     )
                     form_file.set_password(form_file.password)
                     form_file.save()
-                    return render(request, 'consumer/login.html')
+                    return JsonResponse({'msg':'注册成功','status':'success'})
                 else:
                     return JsonResponse({'status': 'fail_one', 'msg': '密码输入不一致'})
             else:
@@ -57,19 +57,16 @@ class Register(View):
             return JsonResponse({'status': 'fail', 'msg': '验证码错误'})
 
 # 登陆
-def login(request):
-    forms = UserForm(request.POST)
-    code = request.POST.get('cache_code',None)
-    if code == request.session['code']:
-        if forms.is_valid():
-            user = auth.authenticate(username=forms.cleaned_data['username'],password=forms.cleaned_data['password'])
-            if user:
-                auth.login(request,user)
-                return JsonResponse({'msg':'登录成功','status':'success'})
-            else:
-                return JsonResponse({'msg':'用户名或者密码错误','status':'fail'})
+def Login(request):
+    forms = UserForm(request.POST,request.FILES)
+    if forms.is_valid():
+        user = auth.authenticate(username=forms.cleaned_data['username'],password=forms.cleaned_data['password'])
+        if user:
+            auth.login(request,user)
+            return JsonResponse({'msg':'登录成功','status':'success'})
         else:
-            form_error = forms.errors.as_json()
-            return JsonResponse({'msg':'格式不正确','data':form_error,'status':'form_error'})
+            return JsonResponse({'msg':'用户名或者密码错误','status':'fail'})
     else:
-        return JsonResponse({'msg':'验证码错误','status':'fail'})
+        form_error = forms.errors.as_json()
+        return JsonResponse({'msg':'格式不正确','data':form_error,'status':'form_error'})
+

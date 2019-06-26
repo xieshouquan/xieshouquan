@@ -99,7 +99,7 @@
             <div class="yz-tu f-l">
                 <img src="/consumer/get_code/" id="code_img" style="width: 160px;height:60px ">
             </div>
-            <p class="f-l">看不清？<a href="1">换张图</a></p>
+            <p class="f-l">看不清？<a id="huan" href="#1">换张图</a></p>
             <div style="clear:both;"></div>
         </div>
         <div class="agreement">
@@ -181,10 +181,9 @@
 </div>
 <script>
     $(function () {
-        var cache = window.document.getElementById('code_img');
-        cache.onclick = function () {
-            this.scr = "/consumer/get_code/?rnd=" + Math.random();
-        };
+        $('#huan').click(function () {
+            $('#code_img').attr('src', '/consumer/get_code/?v' + Math.random())
+        });
         $('#btn_register').click(function () {
             $.ajax({
                 url: '/consumer/Register/',
@@ -202,7 +201,7 @@
                     } else if (data.status == 'form_error') {
                         $('#my_error').text(data.msg)
                     } else if (data.status == 'success') {
-                        window.location.href = '/consumer/login.html';
+                        window.location.href = '/consumer/message_center/';
                     }
                 }
             })

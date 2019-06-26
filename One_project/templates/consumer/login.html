@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>登录</title>
     {% include 'public/pulic_js_css.html' %}
-    <link rel="stylesheet" type="text/css" href="/static/css/login.css" >
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css?v={{ version }}">
 </head>
 <body>
 <div class="sign-logo w1200">
     <h1><a href="#" title="宅客微购"><img src="/static/img/logo.jpg"/></a></h1>
 </div>
-<form >
+<form method="post" action="" enctype="application/x-www-form-urlencoded" id="login_form">
     {% csrf_token %}
     <div class="sign-con w1200">
         <img src="/static/img/logn-tu.gif" class="sign-contu f-l"/>
@@ -19,8 +19,6 @@
             <input type="text" name="username" placeholder="用户名"/>
             <p>密码</p>
             <input type="password" name="password" placeholder="密码"/><br/>
-            <img src="/consumer/get_code/" id="code_img" style="width: 160px;height:60px ">
-            <input type="text" name="code" placeholder="验证码"/><br/>
             <input class="slig-btn" id="btn_login" value="登录">
             <p>已有账号？请<a href="#">登录</a><a href="#" class="wj">忘记密码？</a></p>
             <div class="sign-qx">
@@ -101,29 +99,30 @@
     </p>
 </div>
 <script>
-     $('#code_img').click(function () {
-            $('#code_img').attr('src','/consumer/get_code/?v'+Math.random())
-        });
-    $('#btn_login').click(function () {
+    $(function () {
+        $('#btn_login').click(function () {
             $.ajax({
-                url: '/consumer/login/',
+                url: '/consumer/Login/',
                 type: 'post',
-                data: new FormData($('#login_form')[0]),
+                data: $('#login_form').serialize(),
+
+                dataType: 'json',
                 cache: false,
-                processData: false,
-                contentType: false,
+                {#processData: false,#}
+                {#contentType: false,#}
                 success: function (data) {
-                    if(data.status=='fail'){
+                    console.info(data);
+                    if (data.status == 'fail') {
                         $('#my_error').text(data.msg)
-                    }else if(data.status=='form_error'){
+                    } else if (data.status == 'form_error') {
                         $('#my_error').text(data.msg)
-                    }
-                    else if(data.status=='success'){
-                        window.location.href='/consumer/message_center/';
+                    } else if (data.status == 'success') {
+                        window.location.href = '/consumer/message_center/';
                     }
                 }
             })
         });
+    })
 </script>
 </body>
 </html>
