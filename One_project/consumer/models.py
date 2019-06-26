@@ -29,15 +29,15 @@ class MyUser(AbstractBaseUser):
     headimage = models.FileField('头像', upload_to='tmp/',null=True)
     usernickname=models.CharField('昵称',max_length=30,default='')
     username = models.CharField('用户名',max_length=30,unique=True)
-    usersex=models.BooleanField('性别',default=True)
+    usersex=models.CharField('性别',max_length=5,default='')
     userage=models.CharField('年龄',max_length=3,default='')
     userphone=models.CharField('手机号',max_length=13)
     userEmail = models.EmailField('邮箱')
 
     create_time = models.DateTimeField('注册时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True)
-    # is_active = models.BooleanField(default=True)
-    is_admin = models.BooleanField
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=True)
 
     objects = MyUserManager()
 

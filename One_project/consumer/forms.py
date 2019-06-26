@@ -21,3 +21,5 @@ class RegForm(forms.Form):
     userPassword2 = forms.CharField(label='重复密码',max_length=20,min_length=5)
     userphone=forms.CharField(label='手机号',max_length=13)
     userEmail = forms.EmailField(label='邮箱')
+
+
