@@ -70,3 +70,7 @@ def Login(request):
         form_error = forms.errors.as_json()
         return JsonResponse({'msg':'格式不正确','data':form_error,'status':'form_error'})
 
+def shop_car(request):
+
+    return render(request,'consumer/shop_car.html')
+

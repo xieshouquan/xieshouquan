@@ -11,6 +11,7 @@ class CmmodityType(models.Model):
         return self.cmmodityname
 
 class Cmmodity(models.Model):
+    cmmodityid = models.AutoField('商品id',primary_key=True)
     cmmodityname=models.CharField('商品名称',max_length=20,default='')
     cmmodityimg=models.FileField('商品图片',upload_to='tmp/',null=True)
     cmmodityprice=models.DecimalField('商品单价',max_digits=10, decimal_places=2,default='')

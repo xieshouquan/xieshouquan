@@ -132,7 +132,7 @@
 .prt-con .prt-con-r li .prt-tit{ font-size:14px;color:#595959;}
 .prt-con .prt-con-r li .prt-tit:hover{color:#F09E0B;}
 .prt-con .prt-con-r li p{ font-size:16px; color:#F12D44;}
-
+.prt-con .prt-con-r li>:first-child{display: none}
 
 /*家居建材*/
 .hm-con{width:1198px; height:443px; border:1px solid #ececec; margin-top:10px;}

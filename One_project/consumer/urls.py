@@ -1,5 +1,5 @@
 from django.urls import re_path
-from consumer.views import login, Register, message_center, get_code, Login, personal_center
+from consumer.views import login, Register, message_center, get_code, Login, personal_center,shop_car
 
 urlpatterns = [
     re_path(r'^get_code/$', get_code, name='getcode'),
@@ -8,4 +8,5 @@ urlpatterns = [
     re_path(r'^Login/$',Login,name='Login'),
     re_path(r'^message_center/$',message_center,name='message_center'),
     re_path(r'^personal_center/$',personal_center,name='personal_center'),
+    re_path(r'^shop_car/$',shop_car,name='shop_car'),
 ]
