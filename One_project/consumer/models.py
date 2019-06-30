@@ -70,7 +70,7 @@ class MyUser(AbstractBaseUser):
         db_table = 'user'
 
 class UserCmmodity(models.Model):
-    cmmoditynumber=models.CharField('订单号',max_length=20,unique=True,null=True)
+    cmmoditynumber=models.IntegerField('订单号',unique=True,null=True)
     cmmodityname=models.CharField('商品名称',max_length=100,null=True)
     cmmodityimg = models.FileField('商品图片', upload_to='tmp/', null=True)
     price=models.DecimalField('单价',max_digits=10,decimal_places=2,null=True)
@@ -84,6 +84,11 @@ class UserCmmodity(models.Model):
     pay_id=models.ForeignKey(Cmmodity,default='',on_delete=models.SET_DEFAULT)
     pay_userid=models.ForeignKey(MyUser,default='',on_delete=models.SET_DEFAULT)
 
+class UserPin(models.Model):
+    userid=models.ForeignKey(MyUser,default='',on_delete=models.SET_DEFAULT)
+    cmmodityid=models.ForeignKey(Cmmodity,default='',on_delete=models.SET_DEFAULT)
+    enevaluation=models.TextField('评论',null=True)
+    enevaluationnumber=models.CharField('单号',max_length=50,null=True)
 
 
 

@@ -10,7 +10,7 @@ from django.views import View
 
 from consumer.cache_img import get_cache_code_info
 from consumer.forms import RegForm, UserForm
-from consumer.models import MyUser, UserCmmodity
+from consumer.models import MyUser, UserCmmodity, UserPin
 from hypermarket.models import Cmmodity
 
 
@@ -81,6 +81,8 @@ def save_cmmodity(request):
     type1=request.GET.get('type1')
     type2=request.GET.get('type2')
     name=request.GET.get('name')
+    print(type1)
+    print(type2)
     cmmodity=UserCmmodity(cmmodityname=name,type1=type1,type2=type2,pay_number=number,cmmoditynumber=random.randint(10000000,99999999))
     cmmodity.pay_id_id=id
     cmmodity.pay_userid_id=1
@@ -108,6 +110,27 @@ def buy(request):
     bianhao=request.GET.get('bianhao')
     UserCmmodity.objects.filter(cmmoditynumber=bianhao).update(price=price,pay_number=number,address=address,pay_state=True)
     return JsonResponse({'state':'success'})
+
+def enevaluation(request):
+    bianhaos=request.GET.get('bianhaos')
+
+    cmmoditys=UserCmmodity.objects.filter(cmmoditynumber=bianhaos)
+    return render(request,'consumer/enevaluation.html',{'cmmoditys':cmmoditys})
+
+def save_pinglun(request):
+    ping1=request.GET.get('t1')
+    ping2=request.GET.get('t2')
+    danhao=request.GET.get('danhao')
+    userid=request.GET.get('userid')
+    payid=request.GET.get('payid')
+    strs=ping1+'  '+ping2
+    print(strs)
+    pinlun=UserPin(enevaluation=strs,enevaluationnumber=danhao)
+    pinlun.userid=userid
+    pinlun.cmmodityid=payid
+    pinlun.save()
+    return JsonResponse({'state':'success'})
+
 
 
 

@@ -2,6 +2,9 @@ from django.http import request
 from django.test import TestCase
 import os
 import django
+
+from consumer.models import UserCmmodity
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'One_project.settings')
 django.setup()
 from hypermarket.models import Cmmodity
@@ -16,8 +19,7 @@ from hypermarket.models import Cmmodity
 #     del cmmodity['_state']
 #
 # print(cmmodity)
-info=Cmmodity.objects.get(cmmodityid=1)
-print(info)
+
 # Create your tests here.
 # cmmodity_list = Cmmodity.objects.filter(cmmoditytype=47)
 # paginator = Paginator(cmmodity_list, 8)
