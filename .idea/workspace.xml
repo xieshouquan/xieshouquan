@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8363b84-b78b-4d09-96e3-61cfb7ac6487" name="Default Changelist" comment="" />
+    <list default="true" id="b8363b84-b78b-4d09-96e3-61cfb7ac6487" name="Default Changelist" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,10 +14,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="315" />
-    <option name="y" value="17" />
-    <option name="width" value="1435" />
-    <option name="height" value="980" />
+    <option name="x" value="188" />
+    <option name="y" value="22" />
+    <option name="width" value="590" />
+    <option name="height" value="573" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -29,11 +31,6 @@
               <item name="xieshouquan" type="b2602c69:ProjectViewProjectNode" />
               <item name="xieshouquan" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="xieshouquan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xieshouquan" type="462c0819:PsiDirectoryNode" />
-              <item name="django_one" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -44,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django619" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -72,6 +69,15 @@
       <updated>1560326969228</updated>
       <workItem from="1560326970373" duration="50000" />
       <workItem from="1560327206792" duration="1090000" />
+      <workItem from="1560328338791" duration="631000" />
+      <workItem from="1560751942082" duration="109000" />
+      <workItem from="1561107789702" duration="800000" />
+      <workItem from="1561287187848" duration="23000" />
+      <workItem from="1561295295825" duration="837000" />
+      <workItem from="1561517866419" duration="3384000" />
+      <workItem from="1561597697583" duration="1286000" />
+      <workItem from="1561774994810" duration="599000" />
+      <workItem from="1561856500900" duration="1261000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1560327257203</created>
@@ -87,11 +93,67 @@
       <option name="project" value="LOCAL" />
       <updated>1560327303513</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test">
+      <created>1560328347129</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560328347129</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test">
+      <created>1561107888541</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561107888542</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test">
+      <created>1561517980405</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561517980405</updated>
+    </task>
+    <task id="LOCAL-00006" summary="登录注册功能实现">
+      <created>1561523388798</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561523388798</updated>
+    </task>
+    <task id="LOCAL-00007" summary="数据读取,显示">
+      <created>1561533065810</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561533065810</updated>
+    </task>
+    <task id="LOCAL-00008" summary="初步实现分页显示功能,待完善">
+      <created>1561577199710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561577199710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="商品详情跳转实现&#10;新增购物车html">
+      <created>1561700735015</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561700735015</updated>
+    </task>
+    <task id="LOCAL-00010" summary="完成添加商品&#10;完成购物车网页跳转">
+      <created>1561864498974</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1561864498974</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1140000" />
+    <option name="totallyTimeSpent" value="10070000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -103,9 +165,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="252" y="15" width="1148" height="784" extended-state="0" />
+    <frame x="151" y="18" width="472" height="322" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25412843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.83816427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -116,7 +179,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33128834" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3297546" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.68421054" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3297546" />
@@ -133,6 +196,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="登录注册功能实现" />
+    <MESSAGE value="数据读取,显示" />
+    <MESSAGE value="初步实现分页显示功能,待完善" />
+    <MESSAGE value="商品详情跳转实现&#10;新增购物车html" />
+    <MESSAGE value="完成添加商品&#10;完成购物车网页跳转" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成添加商品&#10;完成购物车网页跳转" />
   </component>
 </project>

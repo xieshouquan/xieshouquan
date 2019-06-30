@@ -137,4 +137,4 @@ AUTH_USER_MODEL = 'consumer.MyUser'
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
-VERSION='346435748'
+VERSION='3748'

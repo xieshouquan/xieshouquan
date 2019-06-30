@@ -71,6 +71,7 @@ class MyUser(AbstractBaseUser):
 
 class UserCmmodity(models.Model):
     cmmoditynumber=models.CharField('订单号',max_length=20,unique=True,null=True)
+    cmmodityname=models.CharField('商品名称',max_length=100,null=True)
     cmmodityimg = models.FileField('商品图片', upload_to='tmp/', null=True)
     price=models.DecimalField('单价',max_digits=10,decimal_places=2,null=True)
     type1=models.CharField('规格1',max_length=20)

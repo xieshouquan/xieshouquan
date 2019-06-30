@@ -1,3 +1,5 @@
+import random
+
 from django.contrib import auth
 from django.core.paginator import Paginator
 from django.http import JsonResponse, HttpResponse
@@ -78,7 +80,8 @@ def save_cmmodity(request):
     number=request.GET.get('number')
     type1=request.GET.get('type1')
     type2=request.GET.get('type2')
-    cmmodity=UserCmmodity(type1=type1,type2=type2,pay_number=number)
+    name=request.GET.get('name')
+    cmmodity=UserCmmodity(cmmodityname=name,type1=type1,type2=type2,pay_number=number,cmmoditynumber=random.randint(10000000,99999999))
     cmmodity.pay_id_id=id
     cmmodity.pay_userid_id=1
     cmmodity.save()
@@ -90,6 +93,21 @@ def shop_car(request):
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
     return render(request,'consumer/shop_car.html',{'contacts':contacts})
+
+def dingdan(request):
+    cmmodity = UserCmmodity.objects.filter(pay_userid_id=1,pay_state=True)
+    paginator = Paginator(cmmodity, 5)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
+    return render(request,'consumer/dingdan.html',{'contacts':contacts})
+
+def buy(request):
+    price=request.GET.get('price')
+    number=request.GET.get('number')
+    address=request.GET.get('address')
+    bianhao=request.GET.get('bianhao')
+    UserCmmodity.objects.filter(cmmoditynumber=bianhao).update(price=price,pay_number=number,address=address,pay_state=True)
+    return JsonResponse({'state':'success'})
 
 
 
