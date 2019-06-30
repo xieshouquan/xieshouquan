@@ -22,16 +22,10 @@ def index(request):
 
 def cmmoditymess(request):
     id=request.GET.get('id')
-    # id=int(id)
-    cmmoditymessage = Cmmodity.objects.filter(cmmodityid=id)
-    for obj in cmmoditymessage:
-        cmmodity = obj.__dict__
-        cmmodityspecs1 = obj.cmmodityspecs1.split('，')
-        cmmodityspecs2 = obj.cmmodityspecs2.split('，')
-        cmmodity['cmmodityspecs1'] = cmmodityspecs1
-        cmmodity['cmmodityspecs2'] = cmmodityspecs2
-        del cmmodity['_state']
-    return render(request,'hypermarket/cmmoditymess.html',{'cmmodity':cmmodity})
+    cmmodity = Cmmodity.objects.get(cmmodityid=id)
+    cmmodityspecs1=cmmodity.cmmodityspecs1.split('，')
+    cmmodityspecs2 = cmmodity.cmmodityspecs2.split('，')
+    return render(request,'hypermarket/cmmoditymess.html',{'cmmodity':cmmodity,'cmmodityspecs1':cmmodityspecs1,'cmmodityspecs2':cmmodityspecs2})
 
 
 class MyEncoder(json.JSONEncoder):
@@ -74,3 +68,16 @@ def index_check(request):
 
 def test2(request):
     return render(request,'public/test.html')
+
+
+
+
+
+
+
+
+
+
+
+
+

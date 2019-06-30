@@ -2,6 +2,9 @@ from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.db import models
 
 # Create your models here.
+from hypermarket.models import Cmmodity
+
+
 class MyUserManager(BaseUserManager):
     def create_user(self, username,  password=None):
         # 验证是否有用户名
@@ -65,3 +68,39 @@ class MyUser(AbstractBaseUser):
         return self.is_admin
     class Meta:
         db_table = 'user'
+
+class UserCmmodity(models.Model):
+    cmmoditynumber=models.CharField('订单号',max_length=20,unique=True,null=True)
+    cmmodityimg = models.FileField('商品图片', upload_to='tmp/', null=True)
+    price=models.DecimalField('单价',max_digits=10,decimal_places=2,null=True)
+    type1=models.CharField('规格1',max_length=20)
+    type2=models.CharField('规格2',max_length=20)
+    pay_number=models.IntegerField('购买数量')
+    address=models.CharField('送货地址',max_length=100,null=True)
+    settime=models.DateField('购买时间',auto_now=True)
+    pay_state=models.BooleanField('付款状态',default=False)
+    evaluate_state=models.BooleanField('评价状态',default=False)
+    pay_id=models.ForeignKey(Cmmodity,default='',on_delete=models.SET_DEFAULT)
+    pay_userid=models.ForeignKey(MyUser,default='',on_delete=models.SET_DEFAULT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

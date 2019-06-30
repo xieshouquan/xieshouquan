@@ -1,4 +1,5 @@
 from django.contrib import auth
+from django.core.paginator import Paginator
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 
@@ -7,7 +8,9 @@ from django.views import View
 
 from consumer.cache_img import get_cache_code_info
 from consumer.forms import RegForm, UserForm
-from consumer.models import MyUser
+from consumer.models import MyUser, UserCmmodity
+from hypermarket.models import Cmmodity
+
 
 
 def message_center(request):
@@ -70,7 +73,39 @@ def Login(request):
         form_error = forms.errors.as_json()
         return JsonResponse({'msg':'格式不正确','data':form_error,'status':'form_error'})
 
-def shop_car(request):
+def save_cmmodity(request):
+    id=request.GET.get('id')
+    number=request.GET.get('number')
+    type1=request.GET.get('type1')
+    type2=request.GET.get('type2')
+    cmmodity=UserCmmodity(type1=type1,type2=type2,pay_number=number)
+    cmmodity.pay_id_id=id
+    cmmodity.pay_userid_id=1
+    cmmodity.save()
+    return JsonResponse({'reslut':'success'})
 
-    return render(request,'consumer/shop_car.html')
+def shop_car(request):
+    cmmodity=UserCmmodity.objects.filter(pay_userid_id=1,pay_state=False)
+    paginator = Paginator(cmmodity, 8)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
+    return render(request,'consumer/shop_car.html',{'contacts':contacts})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
