@@ -49,3 +49,4 @@ from hypermarket.models import Cmmodity
 # cmmoditymessage['cmmodityspecs1'] = cmmodityspecs1
 # cmmoditymessage['cmmodityspecs2'] = cmmodityspecs2
 # print(cmmoditymessage)
+

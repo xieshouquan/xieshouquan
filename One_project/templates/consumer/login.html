@@ -8,13 +8,14 @@
 </head>
 <body>
 <div class="sign-logo w1200">
-    <h1><a href="#" title="宅客微购"><img src="/static/img/logo.jpg"/></a></h1>
+    <h1><a href="/" title="宅客微购"><img src="/static/img/logo.jpg"/></a></h1>
 </div>
 <form method="post" action="" enctype="application/x-www-form-urlencoded" id="login_form">
     {% csrf_token %}
     <div class="sign-con w1200">
         <img src="/static/img/logn-tu.gif" class="sign-contu f-l"/>
         <div class="sign-ipt f-l">
+            <span id="my_error"></span>
             <p>用户名</p>
             <input type="text" name="username" placeholder="用户名"/>
             <p>密码</p>

@@ -10,9 +10,10 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from hypermarket.models import Cmmodity
+from consumer.models import UserPin
+from hypermarket.models import Cmmodity, CmmodityType
 
-
+# 主页
 def index(request):
     cmmodity_list = Cmmodity.objects.filter(cmmoditytype=47)
     paginator = Paginator(cmmodity_list, 8)
@@ -20,14 +21,16 @@ def index(request):
     contacts=paginator.get_page(page)
     return render(request,'hypermarket/index.html',{'contacts':contacts})
 
+# 商品详情页请求与加载
 def cmmoditymess(request):
     id=request.GET.get('id')
+    pinlun = UserPin.objects.filter(cmmodityid_id=id)
     cmmodity = Cmmodity.objects.get(cmmodityid=id)
     cmmodityspecs1=cmmodity.cmmodityspecs1.split('，')
     cmmodityspecs2 = cmmodity.cmmodityspecs2.split('，')
-    return render(request,'hypermarket/cmmoditymess.html',{'cmmodity':cmmodity,'cmmodityspecs1':cmmodityspecs1,'cmmodityspecs2':cmmodityspecs2})
+    return render(request,'hypermarket/cmmoditymess.html',{'cmmodity':cmmodity,'cmmodityspecs1':cmmodityspecs1,'cmmodityspecs2':cmmodityspecs2,'pinlun':pinlun})
 
-
+# 编码方法
 class MyEncoder(json.JSONEncoder):
 
     def default(self, obj):
@@ -52,7 +55,7 @@ class MyEncoder(json.JSONEncoder):
 
             return json.JSONEncoder.default(self, obj)
 
-
+# 主页异步加载请求
 def index_check(request):
     num = request.GET.get('number')
     cmmodity_list_mess=[]
@@ -69,7 +72,16 @@ def index_check(request):
 def test2(request):
     return render(request,'public/test.html')
 
-
+# 查询请求
+def check(request):
+    name=request.GET.get('name')
+    print(name)
+    cmmodity_list = Cmmodity.objects.filter(cmmoditytype__cmmodityname='name')
+    paginator = Paginator(cmmodity_list, 12)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
+    print(contacts)
+    return render(request, 'hypermarket/check.html', {'contacts': contacts,'name':name})
 
 
 

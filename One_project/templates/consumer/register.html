@@ -12,10 +12,15 @@
 <div class="top">
     <div class="top-con w1200">
         <p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
-        <ul class="t-con-r f-r">
-            <li><a href="#">我 (个人中心)</a></li>
-            <li><a href="#">我的购物车</a></li>
-            <li><a href="#">我的订单</a></li>
+        {% if user.is_authenticated %}
+            <p class="t-con-l f-l" style="margin-left: 10px;color: #F9A95B;">{{ user.username }}</p>
+            <a id="tuichu" style="margin-left: 10px;color: #F24739;" href="{% url 'consumer:logoutuser' %}">退出</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <ul class="t-con-r f-r">
+            <li><a href="{% url 'consumer:personal_center' %}">我 (个人中心)</a></li>
+            <li><a href="{% url 'consumer:shop_car' %}">我的购物车</a></li>
+            <li><a href="{% url 'consumer:dingdan' %}">我的订单</a></li>
             <li class="erweima">
                 <a href="#">扫描二维码</a>
                 <div class="ewm-tu">
@@ -24,6 +29,20 @@
             </li>
             <div style="clear:both;"></div>
         </ul>
+        {% else %}
+            <ul class="t-con-r f-r">
+            <li><a href="#1"></a></li>
+            <li><a href="#1"></a></li>
+            <li><a href="#1"></a></li>
+            <li class="erweima">
+                <a href="#1"></a>
+                <div class="ewm-tu1">
+                    <a href="#"><img src="/static/img/erweima-tu.jpg"/></a>
+                </div>
+            </li>
+            <div style="clear:both;"></div>
+        </ul>
+        {% endif %}
         <div style="clear:both;"></div>
     </div>
 </div>
@@ -31,7 +50,7 @@
 <!--logo search 开始-->
 <div class="hd-info1 w1200">
     <div class="logo f-l">
-        <h1><a href="#" title="中林网站"><img src="/static/img/logo.jpg"/></a></h1>
+        <h1><a href="/" title="中林网站"><img src="/static/img/logo.jpg"/></a></h1>
     </div>
     <div class="search f-r">
         <ul class="sp">
@@ -40,13 +59,13 @@
             <div style="clear:both;"></div>
         </ul>
         <div class="srh">
-            <div class="ipt f-l">
-                <input type="text" placeholder="搜索商品..." ss-search-show="sp"/>
-                <input type="text" placeholder="搜索店铺..." ss-search-show="dp" style="display:none;"/>
+            	<div class="ipt f-l">
+                	<input type="text" id="cmmdinfo" placeholder="搜索商品..." ss-search-show="sp" value=""/>
+                    <input type="text" id="cmmdinfo" placeholder="搜索店铺..." ss-search-show="dp" value="" style="display:none;" />
+                </div>
+                <input class="f-r" id="sousuo" value="搜 索">
+                <div style="clear:both;"></div>
             </div>
-            <button class="f-r">搜 索</button>
-            <div style="clear:both;"></div>
-        </div>
         <ul class="sp2">
             <li><a href="#">绿豆</a></li>
             <li><a href="#">大米</a></li>
@@ -81,7 +100,7 @@
         <div class="psw">
             <p class="psw-p1">确认密码</p>
             <input type="password" name="userPassword2" placeholder="请再次确认密码"/>
-            <span class="cuo">密码不一致，请重新输入</span>
+            <span class="cuo" style="display: none">密码不一致，请重新输入</span>
         </div>
         <div class="psw">
             <p class="psw-p1">手机号</p>
@@ -181,6 +200,10 @@
 </div>
 <script>
     $(function () {
+        $('#sousuo').click(function () {
+            var name=$('#cmmdinfo').val();
+            window.location.href='hypermarket/check/?name='+name;
+        });
         $('#huan').click(function () {
             $('#code_img').attr('src', '/consumer/get_code/?v' + Math.random())
         });
@@ -201,7 +224,7 @@
                     } else if (data.status == 'form_error') {
                         $('#my_error').text(data.msg)
                     } else if (data.status == 'success') {
-                        window.location.href = '/consumer/message_center/';
+                        window.location.href = '/consumer/login/';
                     }
                 }
             })

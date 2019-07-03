@@ -10,28 +10,47 @@
 
 	<!--top 开始-->
     <div class="top">
-    	<div class="top-con w1200">
-        	<p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+    <div class="top-con w1200">
+        <p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+        {% if user.is_authenticated %}
+            <p class="t-con-l f-l" style="margin-left: 10px;color: #F9A95B;">{{ user.username }}</p>
+            <a id="tuichu" style="margin-left: 10px;color: #F24739;" href="{% url 'consumer:logoutuser' %}">退出</a>
+        {% endif %}
+        {% if user.is_authenticated %}
             <ul class="t-con-r f-r">
-            	<li><a href="{% url 'consumer:message_center' %}">我 (个人中心)</a></li>
-            	<li><a href="#">我的购物车</a></li>
-            	<li><a href="#">我的订单</a></li>
-            	<li class="erweima">
-                	<a href="#">扫描二维码</a>
-                    <div class="ewm-tu">
-                    	<a href="#"><img src="/static/img/erweima-tu.jpg" /></a>
-                    </div>
-                </li>
-                <div style="clear:both;"></div>
-            </ul>
+            <li><a href="{% url 'consumer:personal_center' %}">我 (个人中心)</a></li>
+            <li><a href="{% url 'consumer:shop_car' %}">我的购物车</a></li>
+            <li><a href="{% url 'consumer:dingdan' %}">我的订单</a></li>
+            <li class="erweima">
+                <a href="#">扫描二维码</a>
+                <div class="ewm-tu">
+                    <a href="#"><img src="/static/img/erweima-tu.jpg"/></a>
+                </div>
+            </li>
             <div style="clear:both;"></div>
-        </div>
+        </ul>
+        {% else %}
+            <ul class="t-con-r f-r">
+            <li><a href="#1"></a></li>
+            <li><a href="#1"></a></li>
+            <li><a href="#1"></a></li>
+            <li class="erweima">
+                <a href="#1"></a>
+                <div class="ewm-tu1">
+                    <a href="#"><img src="/static/img/erweima-tu.jpg"/></a>
+                </div>
+            </li>
+            <div style="clear:both;"></div>
+        </ul>
+        {% endif %}
+        <div style="clear:both;"></div>
     </div>
+</div>
 
     <!--logo search 开始-->
     <div class="hd-info1 w1200">
     	<div class="logo f-l">
-        	<h1><a href="#" title="中林网站"><img src="/static/img/logo.jpg" /></a></h1>
+        	<h1><a href="/" title="中林网站"><img src="/static/img/logo.jpg" /></a></h1>
         </div>
         <div class="search f-r">
         	<ul class="sp">
@@ -41,10 +60,10 @@
             </ul>
             <div class="srh">
             	<div class="ipt f-l">
-                	<input type="text" placeholder="搜索商品..." ss-search-show="sp" />
-                    <input type="text" placeholder="搜索店铺..." ss-search-show="dp" style="display:none;" />
+                	<input type="text" id="cmmdinfo" placeholder="搜索商品..." ss-search-show="sp" value=""/>
+                    <input type="text" id="cmmdinfo1" placeholder="搜索店铺..." ss-search-show="dp" value="" style="display:none;" />
                 </div>
-                <button class="f-r">搜 索</button>
+                <input class="f-r" id="sousuo" value="搜 索">
                 <div style="clear:both;"></div>
             </div>
             <ul class="sp2">
@@ -553,14 +572,14 @@
             <ul>
             	<li class="current-li per-li1"><a href="{% url 'consumer:message_center' %}">消息中心<span>></span></a></li>
             	<li class="per-li2"><a href="{% url 'consumer:personal_center' %}">个人资料<span>></span></a></li>
-            	<li class="per-li3"><a href="#">我的订单<span>></span></a></li>
-            	<li class="per-li4"><a href="#">我的预约<span>></span></a></li>
-            	<li class="per-li5"><a href="#">购物车<span>></span></a></li>
-            	<li class="per-li6"><a href="#">管理收货地址<span>></span></a></li>
-            	<li class="per-li7"><a href="#">店铺收藏<span>></span></a></li>
-            	<li class="per-li8"><a href="#">购买记录<span>></span></a></li>
-            	<li class="per-li9"><a href="#">浏览记录<span>></span></a></li>
-            	<li class="per-li10"><a href="#">会员积分<span>></span></a></li>
+            	<li class="per-li3"><a href="{% url 'consumer:dingdan' %}">我的订单<span>></span></a></li>
+            	<li class="per-li4"><a href="#1">我的预约<span>></span></a></li>
+            	<li class="per-li5"><a href="{% url 'consumer:shop_car' %}">购物车<span>></span></a></li>
+            	<li class="per-li6"><a href="#1">管理收货地址<span>></span></a></li>
+            	<li class="per-li7"><a href="#1">店铺收藏<span>></span></a></li>
+            	<li class="per-li8"><a href="#1">购买记录<span>></span></a></li>
+            	<li class="per-li9"><a href="#1">浏览记录<span>></span></a></li>
+            	<li class="per-li10"><a href="#1">会员积分<span>></span></a></li>
             </ul>
         </div>
     	<div class="personal-r f-r">
@@ -675,32 +694,32 @@
             </div>
 
             <!--分页-->
-            <div class="paging">
-            	<div class="pag-left f-l">
-                	<a href="#" class="about left-r f-l"><</a>
-                    <ul class="left-m f-l">
-                    	<li><a href="#">1</a></li>
-                        <li class="current"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">100</a></li>
-                        <div style="clear:both;"></div>
-                    </ul>
-                	<a href="#" class="about left-l f-l">></a>
-                    <div style="clear:both;"></div>
-                </div>
-            	<div class="pag-right f-l">
-                	<div class="jump-page f-l">
-                        到第<input type="text" />页
-                    </div>
-                    <button class="f-l">确定</button>
-                    <div style="clear:both;"></div>
-                </div>
-                <div style="clear:both;"></div>
-            </div>
+{#            <div class="paging">#}
+{#            	<div class="pag-left f-l">#}
+{#                	<a href="#" class="about left-r f-l"><</a>#}
+{#                    <ul class="left-m f-l">#}
+{#                    	<li><a href="#">1</a></li>#}
+{#                        <li class="current"><a href="#">2</a></li>#}
+{#                        <li><a href="#">3</a></li>#}
+{#                        <li><a href="#">4</a></li>#}
+{#                        <li><a href="#">5</a></li>#}
+{#                        <li><a href="#">6</a></li>#}
+{#                        <li><a href="#">...</a></li>#}
+{#                        <li><a href="#">100</a></li>#}
+{#                        <div style="clear:both;"></div>#}
+{#                    </ul>#}
+{#                	<a href="#" class="about left-l f-l">></a>#}
+{#                    <div style="clear:both;"></div>#}
+{#                </div>#}
+{#            	<div class="pag-right f-l">#}
+{#                	<div class="jump-page f-l">#}
+{#                        到第<input type="text" />页#}
+{#                    </div>#}
+{#                    <button class="f-l">确定</button>#}
+{#                    <div style="clear:both;"></div>#}
+{#                </div>#}
+{#                <div style="clear:both;"></div>#}
+{#            </div>#}
         </div>
         <div style="clear:both;"></div>
     </div>
@@ -773,6 +792,13 @@
         	沪ICP备13044278号<span>|</span>合字B1.B2-20130004<span>|</span>营业执照<span>|</span>互联网药品信息服务资格证<span>|</span>互联网药品交易服务资格证
         </p>
     </div>
-
+<script>
+    $(function () {
+        $('#sousuo').click(function () {
+            var name=$('#cmmdinfo').val();
+            window.location.href='hypermarket/check/?name='+name;
+        })
+    })
+</script>
 </body>
 </html>

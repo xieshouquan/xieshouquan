@@ -29,6 +29,7 @@ a:focus{outline:none;}
 /*top 开始*/
 .top{ width:100%; height:43px; background-color:#FAFAFA; border-bottom:1px solid #e5e5e5;}
 .top-con .t-con-l{ font-size:14px; color:#000; line-height:43px;}
+.top-con #tuichu{ font-size:14px; color:#000; line-height:43px;}
 .top-con .t-con-r li{ float:left; margin-left:45px; line-height:43px;}
 .top-con .t-con-r .erweima{ position:relative;}
 .top-con .t-con-r .erweima a{padding-right:25px; background:url(/static/img/erweima-bg.jpg) no-repeat 80px center;}
@@ -47,7 +48,7 @@ a:focus{outline:none;}
 .search .srh{ width:578px;}
 .search .srh .ipt{background-color:#F19F0B; border-radius:0 3px 3px 3px; padding:2px;}
 .search .srh .ipt input{ width:451px; height:43px; border:none; padding:0 10px; font-size:16px; color:#333;}
-.search .srh button{ width:95px; height:47px; background-color:#F19F0B; font-size:15px; color:#fff; cursor:pointer; border:none;}
+.search .srh #sousuo{ text-align: center;width:95px; height:47px; background-color:#F19F0B; font-size:15px; color:#fff; cursor:pointer; border:none;}
 .search .sp2{ margin-top:3px;}
 .search .sp2 li{ float:left; margin-right:12px;}
 .search .sp2 li a{ font-size:14px; color:#7F7F7F;}

@@ -7,8 +7,8 @@
 .password-con .psw p{ display:inline-block; width:90px; margin-right:10px; font-size:15px; color:#2E2E2E; text-align:right;}
 .password-con .psw input{ width:319px; height:44px; padding:0 10px; border:1px solid #CBCBCB; font-size:13px; color:#8C8C8C;}
 .password-con .psw span{ margin-left:10px; padding-left:25px;}
-.password-con .psw .cuo{ background:url(/static/img/psw-cuo.gif) no-repeat left center;}
-.password-con .psw .dui{ background:url(/static/img/psw-dui.gif) no-repeat left center;}
+/*.password-con .psw .cuo{ background:url(/static/img/psw-cuo.gif) no-repeat left center;}*/
+/*.password-con .psw .dui{ background:url(/static/img/psw-dui.gif) no-repeat left center;}*/
 .password-con .psw-btn{ width:340px; height:44px; cursor:pointer; color:#fff; margin-left:103px; font-size:16px; background:#F09E0B; border:none;text-align: center}
 
 .password-con .psw3 input{ width:143px;}

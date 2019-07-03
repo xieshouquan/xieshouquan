@@ -65,7 +65,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'public.js_css_content.version'
+                'public.js_css_content.version',
+                # 'django.template.context_processors.media',
+                # 'media'
             ],
         },
     },
@@ -137,4 +139,7 @@ AUTH_USER_MODEL = 'consumer.MyUser'
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
-VERSION='3748'
+VERSION='3742423238'
+
+
+# LOGIN_URL = '/consumer/login/'

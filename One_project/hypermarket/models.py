@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+# 商品类型表
 class CmmodityType(models.Model):
     id=models.AutoField(primary_key=True)
     cmmodityname=models.CharField('类型名称',max_length=10,)
@@ -10,6 +11,11 @@ class CmmodityType(models.Model):
     def __str__(self):
         return self.cmmodityname
 
+    class Meta:
+        verbose_name='商品类型'
+        verbose_name_plural=verbose_name
+
+# 商品表
 class Cmmodity(models.Model):
     cmmodityid = models.AutoField('商品id',primary_key=True)
     cmmodityname=models.CharField('商品名称',max_length=20,default='')
@@ -22,5 +28,9 @@ class Cmmodity(models.Model):
 
     def __str__(self):
         return self.cmmodityname
+
+    class Meta:
+        verbose_name='商品列表'
+        verbose_name_plural=verbose_name
 
 

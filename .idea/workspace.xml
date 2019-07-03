@@ -14,10 +14,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="120" />
-    <option name="y" value="13" />
-    <option name="width" value="473" />
-    <option name="height" value="459" />
+    <option name="x" value="998" />
+    <option name="y" value="236" />
+    <option name="width" value="474" />
+    <option name="height" value="460" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -78,7 +78,7 @@
       <workItem from="1561597697583" duration="1286000" />
       <workItem from="1561774994810" duration="599000" />
       <workItem from="1561856500900" duration="1887000" />
-      <workItem from="1561884711620" duration="598000" />
+      <workItem from="1561884711620" duration="665000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1560327257203</created>
@@ -157,11 +157,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561876605663</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完成评价页面">
+      <created>1561886806460</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1561886806460</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11294000" />
+    <option name="totallyTimeSpent" value="11361000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -174,7 +181,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="96" y="11" width="378" height="367" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.90625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -210,6 +216,7 @@
     <MESSAGE value="商品详情跳转实现&#10;新增购物车html" />
     <MESSAGE value="完成添加商品&#10;完成购物车网页跳转" />
     <MESSAGE value="实现购买记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现购买记录" />
+    <MESSAGE value="完成评价页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成评价页面" />
   </component>
 </project>

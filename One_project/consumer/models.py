@@ -68,6 +68,8 @@ class MyUser(AbstractBaseUser):
         return self.is_admin
     class Meta:
         db_table = 'user'
+        verbose_name='用户列表'
+        verbose_name_plural=verbose_name
 
 class UserCmmodity(models.Model):
     cmmoditynumber=models.IntegerField('订单号',unique=True,null=True)
@@ -83,12 +85,19 @@ class UserCmmodity(models.Model):
     evaluate_state=models.BooleanField('评价状态',default=False)
     pay_id=models.ForeignKey(Cmmodity,default='',on_delete=models.SET_DEFAULT)
     pay_userid=models.ForeignKey(MyUser,default='',on_delete=models.SET_DEFAULT)
+    class Meta:
+        verbose_name='用户商品列表'
+        verbose_name_plural=verbose_name
 
 class UserPin(models.Model):
     userid=models.ForeignKey(MyUser,default='',on_delete=models.SET_DEFAULT)
     cmmodityid=models.ForeignKey(Cmmodity,default='',on_delete=models.SET_DEFAULT)
     enevaluation=models.TextField('评论',null=True)
     enevaluationnumber=models.CharField('单号',max_length=50,null=True)
+    pintime=models.DateField('时间',auto_now_add=True)
+    class Meta:
+        verbose_name='用户评论'
+        verbose_name_plural=verbose_name
 
 
 
